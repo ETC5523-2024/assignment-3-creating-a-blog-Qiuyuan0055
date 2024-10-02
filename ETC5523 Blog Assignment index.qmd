@@ -1,0 +1,24 @@
+---
+title: "ETC5523 Blog Assessment"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+title-block-banner: true
+---
+
+## Blog Overview
+
+Welcome to my blog! This blog is a part of my ETC5523 Blog Assessment. Throughout this blog, I will share my learning journey and showcase the analysis projects that I've completed during this course. 
+
+### What You Will Find Here
+- **Assignment 2 Summary:** Analysis of major contributors to global carbon emissions using the Carbon Majors Database.
+- **Data Analysis Techniques:** An exploration of data cleaning, visualization, and statistical analysis techniques using R.
+- **Visualizations and Insights:** Various charts and tables to highlight key findings from different datasets.
+
+Feel free to navigate through the different posts to see the analysis and conclusions drawn from real-world datasets.
+

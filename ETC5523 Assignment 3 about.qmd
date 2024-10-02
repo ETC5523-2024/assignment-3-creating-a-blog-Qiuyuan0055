@@ -1,0 +1,22 @@
+---
+title: "About Me"
+image: "images/IMG_0028.JPG"
+about:
+  template: jolla
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/ETC5523-2024/assignment-3-creating-a-blog-Qiuyuan0055.git
+---
+
+## About Me
+
+Hello! My name is Qiuyuan Chen, and I am currently pursuing a Master of Business Analytics at Monash University. I have a strong passion for data analysis and its applications in business decision-making.
+
+### Background and Interests
+I am particularly interested in:
+- Data analysis and visualization using R Studio and Visual Studio Code.
+- Using statistical models to understand business and environmental trends.
+- Communicating complex data insights effectively through visualizations.
+
+In this blog, I aim to share my learning experiences and showcase the projects I have worked on throughout the course. Feel free to explore the posts and leave your feedback!

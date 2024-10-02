@@ -1,0 +1,69 @@
+---
+title: "Assignment 2 Summary: Analysis of Major Contributors to Carbon Emissions"
+author: "Qiuyuan Chen"
+date: "2024-09-29"
+categories: [carbon-emissions, data-analysis, climate-change]
+---
+This is the first post in a Quarto blog. Welcome!
+
+![](thumbnail.jpg)
+1. ## Problem Description
+
+Climate change has been on the rise in recent years, and carbon emissions have been cited as one of the major contributors to this phenomenon. The uncontrolled utilization of fossil fuels, especially in the processing of oil, gas, coal, and cement, has led to a significant increase in CO2 emissions, thus contributing to global warming. This blog post aims to present a detailed examination of the key players in global carbon emissions using data from the **Carbon Majors Database**.
+
+The **Carbon Majors Database** contains emissions information of 122 fossil fuel producers in oil, gas, coal, and cement industries from 1854 to the present. This dataset helps us understand the historical contributions of these companies to global carbon emissions, focusing on emissions arising from the use of fossil fuels and cement manufacturing.
+
+2. ## Data Cleaning and Preparation
+
+The dataset used in this analysis was derived from the **Carbon Majors Database**. The key variables include:
+
+- `Year`:The year in which the emission data point was recorded.
+- `Parent Entity`: The name of the company or nation to which the emission data is attributed.
+- `Entity Type`: The classification of the entity, such as investor-owned companies, state-owned enterprises, or nations.
+- `Commodity`: The type of product produced, such as oil, natural gas, coal, or cement.
+- `Production Value`: The specific quantity of the commodity produced, with units varying depending on the commodity type.
+- `Total Emissions (MtCO2e)`: The total emissions recorded, expressed in million tonnes of carbon dioxide equivalent (MtCO2e).
+
+During data cleaning, any data points deemed out of range were removed, and values that were outside the normal range were adjusted to ensure consistency. Below is the code snippet for data cleaning using R:
+
+# Load the necessary libraries
+library(dplyr)
+library(readr)
+
+# Read the cleaned emissions data
+emissions_data <- read_csv("/Users/murphy./Desktop/ETC5523\ Assignment/ETC5523\ Assignment\ 2/cleaned_emissions.csv")
+
+# Data cleaning: Remove NA values and filter out outliers
+cleaned_data <- emissions_data %>%
+  filter(!is.na(total_emissions_MtCO2e)) %>%
+  filter(total_emissions_MtCO2e > 0)
+  
+Analysis
+
+The analysis shows that a large share of the global emissions of carbon dioxide is attributed to a limited number of large companies. Many of these companies have been operating for over a century and have consistently contributed a significant share of global emissions. Below is a visualization of the emissions trend over time:
+
+Below is a visualization of the emissions trend over time:
+
+# Plot the emissions trend over time
+library(ggplot2)
+
+ggplot(cleaned_data, aes(x = Year, y = total_emissions_MtCO2e, color = parent_entity)) +
+  geom_line() +
+  theme_minimal() +
+  labs(title = "Total Emissions Over Time",
+       x = "Year",
+       y = "Total Emissions (MtCO2e)",
+       color = "Company")
+
+The graph above illustrates the dramatic rise in emissions from the oil and gas sectors since the mid-20th century. The CO2 emission factors for the production of anthracite coal and coking coal are significantly higher than those for other fossil fuels. Similarly, the kilns used in cement production release a substantial amount of CO2 into the atmosphere, making it one of the leading sources of emissions.
+
+Conclusion
+
+The findings reveal that a small number of companies dominate global carbon emissions, with oil and gas companies being the primary contributors. Moving forward, climate policies must prioritize addressing emissions from these high-impact sectors, particularly in coal and cement production. Additionally, the adoption of more stringent policy measures and innovative approaches toward low-carbon development presents a viable path to mitigating the ongoing climate change crisis.
+
+References
+
+	1.	InfluenceMap. (2024). Downloads. Retrieved from Carbon Majors Database
+	2.	Magazine, S., & Thorsberg, C. (2024, April 9). 80 Percent of Global CO2 Emissions Come From Just 57 Companies Report Shows. Smithsonian Magazine. Retrieved from Smithsonian Magazine
+	3.	Researchers have created emissions-free cement. (2019, September 18). World Economic Forum. Retrieved from World Economic Forum
+
